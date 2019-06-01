@@ -35,3 +35,5 @@ Most video, audio, and archive formats (mkv, mp4, avi, mp3, aac, wav, zip, rar, 
 Syntax: `python python_crc32_forcer.py <filename> <target CRC-32>`
 
 Examples: `python python_crc32_forcer.py "D:\Code\FakeCRC32\Video.mp4" 1234ABCD`
+
+![2019-06-01_154340](https://user-images.githubusercontent.com/1423237/58746095-6fef1600-8484-11e9-8afa-0243dbb8ffa1.png)
