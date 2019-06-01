@@ -2,9 +2,9 @@
 
 ### Introduction ###
 
-A command-line tool that lets you change the CRC-32 checksum to any value you want.
+A command-line tool that lets you change the CRC-32 checksum of a file to any value you want.
 
-Mostly for cool filename like  `No Game No Life Zero [00000000].mkv`
+Mostly for cool filenames like  `No Game No Life Zero [00000000].mkv`
 
 ### How it works ###
 
@@ -21,14 +21,16 @@ Steps:
 3. Append them at the end of the file.
 4. Read the file and calculate the final checksum and show the result.
 
-The function for step 2 were adapted from the C code in `Listing 6: Implementation of data adjustment at the end for a chosen CRC` (page 20).
+The function for step 2 were adapted from the C code in `Listing 6: Implementation of data adjustment at the end for a chosen CRC` (page 20). It runs at 40000 ops on my Core i3-3240 so step 2 shouldn't take more than 0.000025 seconds on newer PCs.
 
-Most video, audio, and archive formats (mkv, mp4, avi, mp3, aac, wav, zip, rar, 7z, etc.) should have no problem with some unknown data at the end of files.
+Most video, audio, and archive formats (mkv, mp4, avi, mp3, aac, wav, zip, rar, 7z, etc.) should have no problem with some unknown data at the end of files. So don't worry, it won't ruin your files.
 
 ### Requirements ###
 
 - Python 2.7+ or 3.3+
 - A terminal
+
+Tested on Linux Mint 19 32-bit XFCE edition with Python 2.7.15rc1 & Python 3.7.6, and Windows 10 Pro version 1809 with Python 3.7.0.
 
 ### Usage ###
 
@@ -37,3 +39,5 @@ Syntax: `python python_crc32_forcer.py <filename> <target CRC-32>`
 Examples: `python python_crc32_forcer.py "D:\Code\FakeCRC32\Video.mp4" 1234ABCD`
 
 ![2019-06-01_154340](https://user-images.githubusercontent.com/1423237/58746095-6fef1600-8484-11e9-8afa-0243dbb8ffa1.png)
+
+![Screenshot_2019-06-01_16-07-17](https://user-images.githubusercontent.com/1423237/58746338-73d06780-8487-11e9-821b-7ad29a52d32a.png)
