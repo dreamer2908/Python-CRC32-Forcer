@@ -1,5 +1,5 @@
 
-import sys, zlib, time, random, struct, os
+import sys, zlib, struct, os
 
 programName = "Python CRC-32 Forcer"
 version = "1.0"
