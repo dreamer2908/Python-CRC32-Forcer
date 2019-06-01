@@ -41,7 +41,7 @@ def stoi(sHash):
 	return int(sHash, base=16)
 
 
-def calc_newContents(targetCRC, originalCRC):
+def calcNewContents(targetCRC, originalCRC):
 	CRCPOLY = 0xEDB88320
 	CRCINV = 0x5B358FD3
 	INITXOR = 0xFFFFFFFF
@@ -80,7 +80,7 @@ def appendContents(fileName, number):
 
 def changeCRC(fileName, targetCRC):
 	originalCRC = crc32_i(fileName)
-	newContents = calc_newContents(targetCRC, originalCRC)
+	newContents = calcNewContents(targetCRC, originalCRC)
 	appendContents(fileName, newContents)
 
 
@@ -117,7 +117,7 @@ def main():
 			print('Original CRC-32: %s' % itos(originalCRC))
 			print('Target CRC-32:   %s' % itos(targetCRC))
 
-			newContents = calc_newContents(targetCRC, originalCRC)
+			newContents = calcNewContents(targetCRC, originalCRC)
 			print('Four bytes to append (hex): %s' % itos(newContents))
 
 			appendContents(fileName, newContents)
